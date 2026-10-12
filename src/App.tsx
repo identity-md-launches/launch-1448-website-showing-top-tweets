@@ -339,10 +339,6 @@ export default function App() {
       <main id="main" className="page-shell" tabIndex={-1}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <div className="hero-tag">
-              <span className="status-dot" />
-              Human ideas. AI firepower.
-            </div>
             <h1 id="hero-title">
               Signal from <br />
               the <span>pond.</span>
@@ -364,18 +360,10 @@ export default function App() {
               height="1024"
               fetchPriority="high"
             />
-            <span className="art-caption">
-              <Cpu size={14} />
-              Armed with intelligence.
-            </span>
           </div>
         </section>
 
         <div className="collection-note">
-          <span>
-            <ShieldCheck size={16} />
-            Curated. Source-linked. Frog-approved.
-          </span>
           <button type="button" onClick={showAbout}>
             A curated snapshot <Info size={14} />
           </button>
@@ -411,11 +399,11 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <p className="feed-intro">
-              {savedView
-                ? "Good ideas, kept close. Saved only in this browser."
-                : "The ideas, builds, and conversations worth a closer look."}
-            </p>
+            {savedView && (
+              <p className="feed-intro">
+                Good ideas, kept close. Saved only in this browser.
+              </p>
+            )}
             <div className="feed-controls" id="feed-controls">
               <div
                 className="filter-buttons"
@@ -567,11 +555,7 @@ export default function App() {
                 <span />
                 <span />
               </div>
-              <h2>
-                Your ideas.
-                <br />
-                An AI army.
-              </h2>
+              <h2>About IdentityMD</h2>
               <p>Meet the project behind the conversation.</p>
               <a
                 href="https://imd.fun"
@@ -618,13 +602,9 @@ export default function App() {
               <span className="curation-icon">
                 <ShieldCheck size={21} />
               </span>
-              <h2>
-                A smaller feed.
-                <br />A stronger signal.
-              </h2>
+              <h2>About this collection</h2>
               <p>
-                Handpicked posts, with a link to every original. No engagement
-                scores. Just ideas worth your time.
+                Excerpts and summaries link to the original posts on X.
               </p>
               <button type="button" onClick={showAbout}>
                 How we pick posts <ArrowRight size={14} />

@@ -40,7 +40,7 @@ The family is `Manrope, ui-sans-serif, system-ui, sans-serif`. [The local variab
 | `--heading` | 2rem / 32px | Mobile hero, mission/dialog heading |
 | `--display` | 3.25rem / 52px | Wide hero heading |
 
-Root size is 16px with unitless line-height 1.6. Post text is weight 500 / line-height 1.65; controls use 600–800, author/feed headings 750. The display headline uses weight 800, line-height 1.08, and −2.1px tracking; mobile tracking is −1px. Supporting prose uses 1.7–1.8 where appropriate. Headings balance; short paragraphs wrap prettily. Names, handles, post text and result summaries can break long strings. Counts, ranks and dates use tabular numerals. No post text is truncated. Text remains selectable.
+Root size is 16px with unitless line-height 1.6. The three applied weights are 400 for post text and supporting prose, 600 for controls and section/card headings (including `h2`, `h3`, and `strong` defaults), and 800 for the hero, main brand and decorative avatar initials. Post text keeps line-height 1.65; the six font sizes are unchanged. The display headline uses weight 800, line-height 1.08, and −2.1px tracking; mobile tracking is −1px. Supporting prose uses 1.7–1.8 where appropriate. Headings balance; short paragraphs wrap prettily. Names, handles, post text and result summaries can break long strings. Counts, ranks and dates use tabular numerals. No post text is truncated. Text remains selectable.
 
 ## Layout
 
@@ -54,12 +54,12 @@ The desktop `.content-layout` pairs a flexible feed with a 286px sidebar and 30p
 | ≥90rem / 1440px | Hero minimum height becomes 320px; copy padding is 28px vertically |
 | ≤72rem / 1152px | Hide brand descriptor; 260px sidebar, 24px gap, one feed-card column |
 | ≤56rem / 896px | 24px page gutters; sidebar moves below feed; feed returns to two columns; hide header external link and curation panel; hero headline becomes 32px |
-| ≤36rem / 576px | 16px gutters, stacked hero, one card column; hide mission panel; auto-fitting topic buttons; 16px search/select text; navigation/footer wrap |
+| ≤36rem / 576px | 16px gutters, compact two-column hero, one card column; hide mission panel; auto-fitting topic buttons; 16px search/select text; navigation/footer wrap |
 | ≤23rem / 368px | 12px gutters, tighter brand/navigation, smaller card insets; hide saved-count badge and feed-heading icon |
 
-At mobile size the hero copy and main action precede its 126px artwork strip; the strip becomes 130px below 368px. Content flows in DOM reading order. The mobile feed heading can wrap independently of sorting controls.
+At ≤36rem the hero uses `grid-template-columns: minmax(0, 1fr) 110px`, with 16px copy padding. The artwork fills the adjacent column and clips to the right corners; it does not reserve a separate row. The copy and action determine the height, including below 368px, where the button label can wrap. The headline, plain description and lime action remain. The snapshot row has 8px vertical padding and an unrestricted button width; the feed controls have an 18px top margin. The default feed introduction and decorative promotional copy have been removed. Saved retains its browser-storage explanation. Content flows in DOM reading order. The mobile feed heading can wrap independently of sorting controls. Sidebar cards retain automatic content height and now use descriptive About headings.
 
-Production browser checks found no horizontal overflow at 320, 390, 768, 1024 and 1440 CSS pixels. At 390px the main action ends around y=335px. Doubling root text to 32px at 390px also passed reflow; this was text enlargement, not native browser zoom. Evidence: [desktop](artifacts/desktop.jpg), [mobile](artifacts/mobile.jpg), [focused mobile feed](artifacts/mobile-feed-focus.jpg), and [browser results](artifacts/browser-results.json).
+Production browser checks found no horizontal overflow at 320, 390, 576, 577, 768, 1024 and 1440 CSS pixels. At 390×844 with fonts loaded and scrollY=0, the main action ends at y=295.88px; the first tweet excerpt is fully visible at y=717.66–796.83px, with its 44px bookmark at y=653.66–697.66px. The first source link remains below the first viewport. Doubling root text to 32px at 390px also passed reflow and search interaction; this was text enlargement, not native browser zoom. Evidence: [desktop](artifacts/final-1440.jpg), [mobile](artifacts/final-390.jpg), [focused mobile feed](artifacts/final-focus.jpg), and [browser results](artifacts/browser-results.json).
 
 ## Elevation & Depth
 

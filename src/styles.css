@@ -98,6 +98,11 @@ h3 {
   text-wrap: balance;
   line-height: 1.2;
 }
+h2,
+h3,
+strong {
+  font-weight: 600;
+}
 p {
   text-wrap: pretty;
 }
@@ -192,7 +197,7 @@ img {
 .brand-by {
   color: var(--muted);
   font-size: var(--caption);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0;
   max-width: 108px;
   line-height: 1.4;
@@ -266,17 +271,6 @@ img {
   z-index: 1;
   background: var(--surface);
 }
-.hero-tag {
-  font-size: var(--caption);
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-block-end: 14px;
-}
-.hero-tag .status-dot {
-  color: var(--accent);
-}
 h1 {
   font-size: var(--display);
   font-weight: 800;
@@ -300,7 +294,7 @@ h1 span {
   background: var(--accent);
   color: var(--on-accent);
   font-size: var(--small);
-  font-weight: 800;
+  font-weight: 600;
   min-height: 44px;
   padding: 10px 18px;
 }
@@ -319,30 +313,15 @@ h1 span {
   outline: 1px solid #ffffff1a;
   outline-offset: -1px;
 }
-.art-caption {
-  position: absolute;
-  inset-inline-end: 18px;
-  inset-block-end: 18px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: var(--caption);
-  padding: 6px 10px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--muted);
-}
 .collection-note {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
-  padding: 16px 2px 26px;
+  padding: 8px 2px;
   font-size: var(--caption);
   color: var(--muted);
 }
-.collection-note > span,
 .collection-note button {
   display: flex;
   align-items: center;
@@ -382,7 +361,7 @@ h1 span {
 }
 .section-heading h2 {
   font-size: var(--subhead);
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: -0.5px;
   scroll-margin-top: 24px;
 }
@@ -435,6 +414,7 @@ select {
 }
 .feed-controls {
   scroll-margin-top: 20px;
+  margin-block-start: 18px;
 }
 .filter-buttons {
   display: flex;
@@ -620,7 +600,7 @@ input::-webkit-search-cancel-button {
 }
 .author-text h3 {
   font-size: var(--small);
-  font-weight: 750;
+  font-weight: 600;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -651,7 +631,7 @@ input::-webkit-search-cancel-button {
 }
 .post-copy {
   font-size: var(--body);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.65;
   margin-block: 19px 20px;
   overflow-wrap: anywhere;
@@ -786,7 +766,7 @@ input::-webkit-search-cancel-button {
   align-items: center;
   gap: 6px;
   font-size: var(--small);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.4px;
   color: var(--text);
 }
@@ -864,7 +844,7 @@ input::-webkit-search-cancel-button {
 }
 .mission-card h2 {
   font-size: var(--heading);
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: -1.2px;
   line-height: 1.15;
 }
@@ -894,7 +874,7 @@ input::-webkit-search-cancel-button {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .topics-card h2 > svg {
   color: var(--accent);
@@ -951,7 +931,7 @@ input::-webkit-search-cancel-button {
 }
 .curation-card h2 {
   font-size: var(--subhead);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.5px;
   line-height: 1.35;
 }
@@ -1256,9 +1236,6 @@ input::-webkit-search-cancel-button {
   .snapshot-note {
     grid-column: 2;
   }
-  .collection-note {
-    padding-block-end: 24px;
-  }
   .post-card {
     padding-inline: 18px;
   }
@@ -1297,19 +1274,15 @@ input::-webkit-search-cancel-button {
     padding: 18px 16px 0;
   }
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 110px;
     min-height: 0;
     border-radius: 16px;
     overflow: visible;
   }
   .hero-copy {
-    padding: 24px;
-    border-radius: 16px;
+    padding: 16px;
+    border-radius: 16px 0 0 16px;
     background: var(--surface);
-  }
-  .hero-tag {
-    font-size: var(--caption);
-    margin-block-end: 12px;
   }
   .hero h1 {
     font-size: var(--heading);
@@ -1325,20 +1298,13 @@ input::-webkit-search-cancel-button {
     z-index: 1;
   }
   .hero-art {
-    height: 126px;
     overflow: hidden;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 16px 16px 0;
   }
   .hero-art > img {
     object-position: 50% 43%;
     width: 100%;
     height: 100%;
-  }
-  .art-caption {
-    inset-inline-end: 12px;
-    inset-block-end: 12px;
-    font-size: var(--caption);
-    padding: 4px 8px;
   }
   .primary-button {
     min-height: 44px;
@@ -1346,21 +1312,13 @@ input::-webkit-search-cancel-button {
   }
   .collection-note {
     align-items: flex-start;
-    padding: 14px 1px 22px;
+    padding: 8px 1px;
     gap: 10px;
-  }
-  .collection-note > span {
-    max-width: 25ch;
-    align-items: flex-start;
-    line-height: 1.7;
-  }
-  .collection-note > span > svg {
-    margin-block-start: 3px;
   }
   .collection-note button {
     font-size: var(--caption);
     text-align: end;
-    max-width: 14ch;
+    max-width: none;
     line-height: 1.6;
     padding: 0;
     justify-content: flex-end;
@@ -1507,15 +1465,6 @@ input::-webkit-search-cancel-button {
   }
   .page-shell {
     padding-inline: 12px;
-  }
-  .hero-copy {
-    padding: 20px;
-  }
-  .hero-art {
-    height: 130px;
-  }
-  .hero-tag {
-    font-size: var(--caption);
   }
   .post-card {
     padding-inline: 16px;
